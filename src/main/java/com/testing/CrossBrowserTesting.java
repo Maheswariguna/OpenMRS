@@ -1,15 +1,16 @@
 package com.testing;
 
 import org.testng.annotations.Test;
+import org.testng.internal.BaseClassFinder;
 
-import com.base.BaseClass;
 
-public class CrossBrowserTesting extends BaseClass {
+
+public class CrossBrowserTesting extends BaseClassFinder {
 	@Test
 	
 private void chrome() {
 		launchBrowser("chrome");
-		launchUrl("https://www.google.co.in/");
+		launchBrowser("https://www.google.co.in/");
 		System.out.println("Browser ID : " +Thread.currentThread().getId());
 		terminateBrowser();
 	}
@@ -19,6 +20,11 @@ private void chrome() {
 		launchBrowser("edge");
 		launchUrl("https://www.google.co.in/");
 		System.out.println("Browser ID: " +Thread.currentThread().getId());
+	}
+
+	private void launchBrowser(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
